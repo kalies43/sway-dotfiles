@@ -1,0 +1,18 @@
+# Ignore everything by default
+/*
+
+# Un-ignore only the dotfiles you're actually tracking
+!/sway
+!/waybar
+!/rofi
+!/alacritty
+
+# Also un-ignore this file itself
+!.gitignore
+
+# Within tracked folders, still exclude junk/cache/local-only files
+**/cache/
+**/*.cache
+**/*.log
+**/*.bak
+**/*~
