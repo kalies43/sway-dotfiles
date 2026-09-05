@@ -2,6 +2,7 @@
 ### VARIABLES
 ################################################################################
 
+set $username $(whoami)
 set $mod Mod4
 set $term alacritty
 set $file_man nautilus
@@ -206,11 +207,14 @@ input type:touchpad {
 
 # Set monitors and workspaces for monitors
 output DP-1 pos 0 0 res 1680x1050@59.883Hz transform 270
-output DP-1 bg /home/liz/Pictures/Wallpapers/rebecca.jpg fill #000000
+output DP-1 bg /home/$username/Pictures/Wallpapers/rebecca.jpg fill #000000
 
 output DP-2 pos 1050 600 res 1920x1080@239.998Hz
-output DP-2 bg /home/liz/Pictures/Wallpapers/rebecca.jpg fill #000000
+output DP-2 bg /home/$username/Pictures/Wallpapers/rebecca.jpg fill #000000
+
 output eDP-1 pos 0 1080
+output eDP-1 bg bg /home/$username/Pictures/Wallpapers/rebecca.jpg fill #000000
+
 
 workspace 1 output DP-2
 workspace 2 output DP-1
@@ -228,7 +232,7 @@ set $my_cursor_size 18
 
 
 # My modifications 
-exec alacritty --class spotify-background -e /home/liz/.cargo/bin/spotify_player
+exec alacritty --class spotify-background -e /home/$username/.cargo/bin/spotify_player
 for_window [app_id="spotify-background"] move to scratchpad
 for_window [class="^.*"] opacity 0.90
 for_window [app_id="org.mozilla.firefox"] opacity 1
