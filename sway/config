@@ -231,4 +231,4 @@ set $my_cursor_size 18
 exec alacritty --class spotify-background -e /home/liz/.cargo/bin/spotify_player
 for_window [app_id="spotify-background"] move to scratchpad
 for_window [class="^.*"] opacity 0.90
-for_window [app_id="firefox"] opacity 0.95
+for_window [app_id="org.mozilla.firefox"] opacity 1
