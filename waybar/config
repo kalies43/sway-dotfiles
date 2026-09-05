@@ -21,7 +21,8 @@
     "modules-left": [
         "sway/workspaces",
         "sway/mode",
-        "sway/window"
+        "sway/window",
+	"custom/spotify"
     ],
     "modules-center": [
         "clock"
@@ -43,6 +44,13 @@
     // -------------------------------------------------------------------------
     // Modules
     // -------------------------------------------------------------------------
+
+    "custom/spotify": {
+	"format": "  {}",
+	"exec": "playerctl -p spotify_player metadata --format '{{ artist }} - {{ title }}' 2>/dev/null || echo ''",
+	"interval": 2,
+	"on-click": "alacritty --class spotify-popup -e /home/liz/.cargo/bin/spotify_player"
+    },
 
     "backlight": {
         "format": " {percent}%",
@@ -167,13 +175,6 @@
             "default": ""
         }
     },
-	"custom/temp": {
-		"exec": "/home/finxol/.config/waybar/temperature.py",
-        "format": "{}°C {icon}",
-        "format-icons": [""],
-		"interval": 10
-    },
-
     "tray": {
         "icon-size": 21,
         "spacing": 10

@@ -11,6 +11,7 @@ set $alt_browser flatpak run com.github.Eloston.UngoogledChromium
 set $audio_man EasyEffects
 set $email_client evolution
 
+
 set $left left
 set $down down
 set $up up
@@ -26,16 +27,29 @@ workspace 1
 ###  STYLING
 ################################################################################
 
-default_border pixel 1
-client.focused          #81a1c1 #81a1c1 #81a1c1 #81a1c1 #81a1c1
-client.focused_inactive #282c34 #282c34 #282c34 #282c34 #282c34
-client.urgent           #e06c75 #e06c75 #e06c75 #e06c75 #e06c75
-client.unfocused        #282c34 #282c34 #282c34 #282c34 #282c34
+set $bg      #090706
+set $surface #342609
+set $fg      #FAF20B
+set $accent  #07F100
+set $warm    #D49B05
 
+# class            border   bg      text   indicator child_border
+client.focused      $accent  $accent $bg    $accent    $accent
+client.unfocused    $surface $surface $fg   $surface   $surface
+client.focused_inactive $warm $warm  $bg    $warm      $warm
+
+
+default_border pixel 1
 gaps inner 1
 gaps outer 0
 
 exec $HOME/.azotebg
+
+# My modifs
+for_window [app_id="spotify-popup"] floating enable
+for_window [app_id="spotify-popup"] resize set 500 350
+for_window [app_id="spotify-popup"] move position center
+
 
 ################################################################################
 ###  KEYBINDINGS
@@ -114,8 +128,8 @@ exec $HOME/.azotebg
 
 ## Scratchpad:
 
-#    bindsym $mod+Shift+minus move scratchpad
-#    bindsym $mod+minus scratchpad show
+    bindsym $mod+Shift+minus move scratchpad
+    bindsym $mod+minus scratchpad show
 
 
 
@@ -192,7 +206,10 @@ input type:touchpad {
 
 # Set monitors and workspaces for monitors
 output DP-1 pos 0 0 res 1680x1050@59.883Hz transform 270
+output DP-1 bg /home/liz/Pictures/Wallpapers/rebecca.jpg fill #000000
+
 output DP-2 pos 1050 600 res 1920x1080@239.998Hz
+output DP-2 bg /home/liz/Pictures/Wallpapers/rebecca.jpg fill #000000
 output eDP-1 pos 0 1080
 
 workspace 1 output DP-2
@@ -207,3 +224,11 @@ exec bluetooth off
 # Set Cursor theme
 set $my_cursor Qogir
 set $my_cursor_size 18
+
+
+
+# My modifications 
+exec alacritty --class spotify-background -e /home/liz/.cargo/bin/spotify_player
+for_window [app_id="spotify-background"] move to scratchpad
+for_window [class="^.*"] opacity 0.90
+for_window [app_id="firefox"] opacity 0.95

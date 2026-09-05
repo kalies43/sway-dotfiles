@@ -19,3 +19,21 @@ style = "Italic"
 [font.normal]
 family = "DejaVu Sans Mono"
 style = "Regular"
+
+[colors.primary]
+background = "#090706"
+foreground = "#FAF20B"
+
+[colors.cursor]
+text = "#090706"
+cursor = "#07F100"
+
+[colors.normal]
+black   = "#090706"
+red     = "#BC7D0B"
+green   = "#07F100"
+yellow  = "#FAF20B"
+blue    = "#434202"
+magenta = "#D49B05"
+cyan    = "#B9D611"
+white   = "#FAF20B"
