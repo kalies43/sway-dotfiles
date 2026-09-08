@@ -207,10 +207,10 @@ input type:touchpad {
 
 # Set monitors and workspaces for monitors
 output DP-1 pos 0 0 res 1680x1050@59.883Hz transform 270
-output DP-1 bg /home/$username/Pictures/Wallpapers/rebecca.jpg fill #000000
+output DP-1 bg /home/$username/Pictures/Wallpapers/wlop-11se.webp fill #000000
 
 output DP-2 pos 1050 600 res 1920x1080@239.998Hz
-output DP-2 bg /home/$username/Pictures/Wallpapers/rebecca.jpg fill #000000
+output DP-2 bg /home/$username/Pictures/Wallpapers/wlop-11se.webp fill #000000
 
 output eDP-1 pos 0 1080
 output eDP-1 bg bg /home/$username/Pictures/Wallpapers/rebecca.jpg fill #000000

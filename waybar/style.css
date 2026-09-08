@@ -26,7 +26,7 @@ warm:           '#D49B05'
 }
 
 window#waybar {
-    background: linear-gradient(180deg, rgba(9,7,6,0.9) 0%, rgba(9,7,6,0.75) 100%);
+    background: transparent; /*linear-gradient(180deg, rgba(9,7,6,0.9) 0%, rgba(9,7,6,0.75) 100%);*/
     color: #FAF20B;
     border-radius: 0 0 12px 12px;
 }
