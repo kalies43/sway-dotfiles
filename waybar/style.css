@@ -1,127 +1,106 @@
-/*
-Color Pallete
-foreground:     '#FAF20B'
-background:     '#090706'
-alt-background: '#342609'
-accent:         '#07F100'
-warm:           '#D49B05'
-*/
-
-@keyframes blink-warning {
-    70% { color: #FAF20B; }
-    to  { color: #090706; background-color: #D49B05; }
-}
-
-@keyframes blink-critical {
-    70% { color: #FAF20B; }
-    to  { color: #FAF20B; background-color: #BC7D0B; }
-}
-
 * {
     border: none;
     border-radius: 0;
-    min-height: 0;
-    font-family: "JetBrainsMono Nerd Font", "Fira Sans", sans-serif;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
     font-size: 13px;
 }
 
 window#waybar {
-    background: transparent; /*linear-gradient(180deg, rgba(9,7,6,0.9) 0%, rgba(9,7,6,0.75) 100%);*/
-    color: #FAF20B;
-    border-radius: 0 0 12px 12px;
+    background-color: rgba(21, 19, 15, 0.88);
+    color: #ece2d0;
 }
 
-/* Give the bar itself some breathing room from the screen edges */
 #waybar {
-    margin: 6px 10px 0 10px;
+    margin: 10px 8px 10px 0;
 }
 
-/* Shared pill style for modules */
-#backlight, #battery, #clock, #cpu, #custom-keyboard-layout,
-#idle_inhibitor, #memory, #mode, #network, #pulseaudio,
-#temperature, #custom-temp, #tray, #custom-spotify {
-    margin: 6px 4px;
-    padding: 4px 14px;
+window#waybar {
     border-radius: 14px;
-    background-color: rgba(52, 38, 9, 0.6);
-    color: #FAF20B;
-    transition: background-color 0.3s ease;
 }
 
-#backlight:hover, #battery:hover, #clock:hover, #cpu:hover,
-#network:hover, #pulseaudio:hover, #custom-spotify:hover {
-    background-color: rgba(7, 241, 0, 0.15);
-}
-
-#clock {
-    font-weight: 600;
-    background-color: rgba(7, 241, 0, 0.12);
-    color: #07F100;
-}
-
-#battery.warning { color: #D49B05; }
-#battery.critical { color: #BC7D0B; }
-#battery.warning.discharging { animation-name: blink-warning; animation-duration: 3s; }
-#battery.critical.discharging { animation-name: blink-critical; animation-duration: 2s; }
-
-#cpu.warning, #memory.warning { color: #D49B05; }
-#cpu.critical, #memory.critical { color: #BC7D0B; }
-
-#network.disconnected { color: #D49B05; }
-#temperature.critical { color: #BC7D0B; }
-
-#mode {
-    color: #090706;
-    background-color: #07F100;
-    padding: 4px 16px;
-    font-weight: 600;
-}
-
-#tray {
-    background-color: transparent;
-    padding: 0 8px;
-}
-
-#window {
-    margin: 0 16px;
-    color: #B9D611;
-    font-style: italic;
-}
-
-/* Workspaces */
+/* Workspaces — vertical pills */
 #workspaces {
-    margin: 6px 6px;
-    background-color: rgba(52, 38, 9, 0.4);
-    border-radius: 14px;
-    padding: 2px;
+    padding: 6px 0;
 }
 
 #workspaces button {
-    padding: 4px 12px;
-    margin: 2px;
+    padding: 8px 0;
+    margin: 4px 8px;
     border-radius: 10px;
-    color: #B9D611;
+    color: #b3a488;
     background: transparent;
-    transition: all 0.2s ease;
-}
-
-#workspaces button:hover {
-    background: rgba(7, 241, 0, 0.15);
-    box-shadow: none;
-}
-
-#workspaces button.visible {
-    color: #FAF20B;
-    background-color: rgba(212, 155, 5, 0.25);
 }
 
 #workspaces button.focused {
-    color: #090706;
-    background-color: #07F100;
+    background-color: #c9a04a;
+    color: #15130f;
     font-weight: 700;
 }
 
-#workspaces button.urgent {
-    color: #FAF20B;
-    background-color: #BC7D0B;
+#workspaces button.visible {
+    background-color: rgba(124, 63, 46, 0.3);
+    color: #ece2d0;
+}
+
+/* Middle cluster */
+#custom-spotify {
+    padding: 10px 0;
+    color: #b3a488;
+}
+
+#custom-spotify.playing {
+    color: #4f7a68;
+}
+
+#tray {
+    padding: 8px 0;
+}
+
+/* Status icons */
+#cpu, #memory, #network, #pulseaudio, #custom-easyeffects {
+    padding: 8px 0;
+    color: #ECE2D0;
+}
+
+#network.disconnected {
+    color: #7C3F2E;
+}
+
+/* Clock — AM/PM color swap */
+#custom-clock {
+    padding: 8px 4px;
+    margin: 4px 6px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+#custom-clock.am {
+    color: #ece2d0;
+    background-color: rgba(21, 19, 15, 0.5);
+}
+
+#custom-clock.pm {
+    color: #15130f;
+    background-color: rgba(201, 160, 74, 0.9);
+}
+
+/* Power group */
+#power {
+    padding: 10px 0;
+    color: #7c3f2e;
+    font-size: 16px;
+}
+
+.power-drawer {
+    color: #ece2d0;
+    padding: 6px 0;
+    opacity: 0.9;
+}
+
+#lock, #sleep, #reboot, #shutdown {
+    padding: 6px 0;
+}
+
+#shutdown {
+    color: #5c2a1f;
 }

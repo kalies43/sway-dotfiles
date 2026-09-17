@@ -21,19 +21,19 @@ family = "DejaVu Sans Mono"
 style = "Regular"
 
 [colors.primary]
-background = "#090706"
-foreground = "#FAF20B"
+background = "#15130f"
+foreground = "#ece2d0"
 
 [colors.cursor]
-text = "#090706"
-cursor = "#07F100"
+text = "#15130f"
+cursor = "#c9a04a"
 
 [colors.normal]
-black   = "#090706"
-red     = "#BC7D0B"
-green   = "#07F100"
-yellow  = "#FAF20B"
-blue    = "#434202"
-magenta = "#D49B05"
-cyan    = "#B9D611"
-white   = "#FAF20B"
+black   = "#15130f"
+red     = "#7c3f2e"
+green   = "#4f7a68"
+yellow  = "#c9a04a"
+blue    = "#2e3a28"
+magenta = "#5c2a1f"
+cyan    = "#4f7a68"
+white   = "#ece2d0"

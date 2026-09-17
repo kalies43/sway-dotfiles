@@ -28,21 +28,21 @@ workspace 1
 ###  STYLING
 ################################################################################
 
-set $bg      #090706
-set $surface #342609
-set $fg      #FAF20B
-set $accent  #07F100
-set $warm    #D49B05
+set $bg      #15130f
+set $surface #2e3a28
+set $fg      #ece2d0
+set $accent  #c9a04a
+set $warm    #7c3f2e
 
-# class            border   bg      text   indicator child_border
-client.focused      $accent  $accent $bg    $accent    $accent
-client.unfocused    $surface $surface $fg   $surface   $surface
-client.focused_inactive $warm $warm  $bg    $warm      $warm
+client.focused          $accent  $accent $bg    $accent    $accent
+client.focused_inactive $warm    $warm   $fg    $warm      $warm
+client.unfocused        $surface $surface $fg   $surface   $surface
+client.urgent           #5c2a1f  #5c2a1f $fg    #5c2a1f    #5c2a1f
 
 
 default_border pixel 1
-gaps inner 2
-gaps outer 2
+gaps inner 0
+gaps outer 0
 
 exec $HOME/.azotebg
 
